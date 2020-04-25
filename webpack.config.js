@@ -26,8 +26,22 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      }, {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ]
       }
     ]
+  },
+
+  resolve: {
+    extensions: [".js", ".jsx"],
+    alias: {
+      Images: path.resolve(__dirname, "./src/images")
+    }
   },
 
   plugins: [
